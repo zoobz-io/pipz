@@ -29,7 +29,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/zoobzio/pipz"
+	"github.com/zoobz-io/pipz"
 )
 
 // MockProcessor provides a configurable mock implementation of pipz.Chainable[T].

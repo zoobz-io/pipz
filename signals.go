@@ -1,6 +1,6 @@
 package pipz
 
-import "github.com/zoobzio/capitan"
+import "github.com/zoobz-io/capitan"
 
 // Signal definitions for pipz connector events.
 // Signals follow the pattern: <connector-type>.<event>.

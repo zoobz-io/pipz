@@ -12,7 +12,7 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/zoobzio/clockz"
+	"github.com/zoobz-io/clockz"
 )
 
 // testIdentity creates a test identity.

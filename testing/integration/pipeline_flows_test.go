@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/zoobzio/pipz"
-	pipztesting "github.com/zoobzio/pipz/testing"
+	"github.com/zoobz-io/pipz"
+	pipztesting "github.com/zoobz-io/pipz/testing"
 )
 
 // TestUser represents a user for testing validation and transformation pipelines.

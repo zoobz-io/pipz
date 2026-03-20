@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/zoobzio/capitan"
+	"github.com/zoobz-io/capitan"
 )
 
 // Race runs all processors in parallel and returns the result of the first

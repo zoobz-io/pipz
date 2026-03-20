@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/zoobzio/pipz"
+	"github.com/zoobz-io/pipz"
 )
 
 // TestConcurrentProcessorModification demonstrates the race condition where

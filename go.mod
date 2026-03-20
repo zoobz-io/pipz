@@ -1,4 +1,4 @@
-module github.com/zoobzio/pipz
+module github.com/zoobz-io/pipz
 
 go 1.24
 
@@ -18,8 +18,8 @@ retract (
 	v0.0.1 // Not part of the package
 )
 
-require github.com/zoobzio/clockz v1.0.0
+require github.com/zoobz-io/clockz v1.0.2
 
-require github.com/zoobzio/capitan v1.0.0
+require github.com/zoobz-io/capitan v1.0.2
 
 require github.com/google/uuid v1.6.0

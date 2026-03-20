@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/zoobzio/clockz"
+	"github.com/zoobz-io/clockz"
 )
 
 // clonableInt is a simple int type that implements Cloner for testing WorkerPool.

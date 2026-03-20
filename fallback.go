@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/zoobzio/capitan"
+	"github.com/zoobz-io/capitan"
 )
 
 // Fallback attempts processors in order, falling back to the next on error.

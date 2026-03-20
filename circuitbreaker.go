@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/zoobzio/capitan"
-	"github.com/zoobzio/clockz"
+	"github.com/zoobz-io/capitan"
+	"github.com/zoobz-io/clockz"
 )
 
 // State constants.

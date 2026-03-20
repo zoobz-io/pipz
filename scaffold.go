@@ -5,7 +5,7 @@ import (
 	"errors"
 	"sync"
 
-	"github.com/zoobzio/capitan"
+	"github.com/zoobz-io/capitan"
 )
 
 // Scaffold runs all processors in parallel with context isolation for true fire-and-forget behavior.
