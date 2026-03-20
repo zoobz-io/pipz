@@ -12,7 +12,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/zoobzio/pipz"
+	"github.com/zoobz-io/pipz"
 )
 
 // APIRequest represents a typical API request structure.

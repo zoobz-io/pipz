@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/zoobzio/pipz"
+	"github.com/zoobz-io/pipz"
 )
 
 // TestPanicCascade demonstrates the critical gap in handle.go where error handler panics

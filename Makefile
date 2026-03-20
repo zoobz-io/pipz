@@ -1,36 +1,23 @@
-.PHONY: test test-unit test-integration test-bench test-reliability test-all bench bench-all lint lint-fix coverage clean all check ci install-tools install-hooks help
+.PHONY: test test-unit test-integration test-bench lint lint-fix security coverage clean help check ci install-tools install-hooks
 
 .DEFAULT_GOAL := help
 
-all: test lint ## Run tests and lint
+help: ## Display available commands
+	@echo "pipz Development Commands"
+	@echo "=============================="
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-18s\033[0m %s\n", $$1, $$2}'
 
-## Testing & Quality
 test: ## Run all tests with race detector
-	@go test -v -race ./...
+	@go test -v -race -tags testing ./...
 
 test-unit: ## Run unit tests only (short mode)
-	@go test -v -race -short ./...
+	@go test -v -race -tags testing -short ./...
 
-test-integration: ## Run integration tests with race detector
-	@go test -v -race -timeout=10m ./testing/integration/...
+test-integration: ## Run integration tests
+	@go test -v -race -tags testing -timeout=10m ./testing/integration/...
 
-test-bench: ## Run performance benchmarks
-	@go test -v -bench=. -benchmem -benchtime=100ms -timeout=15m ./testing/benchmarks/...
-
-test-reliability: ## Run reliability/resilience tests
-	@go test -v -race -timeout=10m -run TestResilience ./testing/integration/...
-	@go test -v -race -timeout=5m -run TestPanicRecovery ./testing/integration/...
-	@go test -v -race -timeout=10m -run TestResourceLeak ./testing/integration/...
-	@go test -v -race -timeout=5m -run TestConcurrentModification ./testing/integration/...
-
-test-all: test test-integration test-reliability ## Run all test suites
-	@echo "All test suites completed!"
-
-bench: ## Run core library benchmarks
-	@go test -bench=. -benchmem -benchtime=100ms -timeout=15m .
-
-bench-all: ## Run all benchmarks
-	@go test -bench=. -benchmem -benchtime=100ms -timeout=15m ./...
+test-bench: ## Run benchmarks
+	@go test -tags testing -bench=. -benchmem -benchtime=100ms ./testing/benchmarks/...
 
 lint: ## Run linters
 	@golangci-lint run --config=.golangci.yml --timeout=5m
@@ -38,37 +25,34 @@ lint: ## Run linters
 lint-fix: ## Run linters with auto-fix
 	@golangci-lint run --config=.golangci.yml --fix
 
+security: ## Run security scanner
+	@gosec -quiet ./...
+
 coverage: ## Generate coverage report (HTML)
-	@go test -coverprofile=coverage.out ./...
+	@go test -tags testing -coverprofile=coverage.out ./...
 	@go tool cover -html=coverage.out -o coverage.html
 	@go tool cover -func=coverage.out | tail -1
-	@echo "Coverage report generated: coverage.html"
+	@echo "Coverage report: coverage.html"
 
-check: test lint ## Quick validation (test + lint)
-	@echo "All checks passed!"
+clean: ## Remove generated files
+	@rm -f coverage.out coverage.html coverage.txt
+	@find . -name "*.test" -delete
+	@find . -name "*.prof" -delete
+	@find . -name "*.out" -delete
 
-ci: clean lint test test-integration test-bench test-reliability coverage ## Full CI simulation
-	@echo "Full CI simulation complete!"
-
-## Setup
-install-tools: ## Install required development tools
+install-tools: ## Install development tools
 	@go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.7.2
+	@go install github.com/securego/gosec/v2/cmd/gosec@latest
 
-install-hooks: ## Install git pre-commit hooks
+install-hooks: ## Install git pre-commit hook
 	@mkdir -p .git/hooks
 	@echo '#!/bin/sh' > .git/hooks/pre-commit
 	@echo 'make check' >> .git/hooks/pre-commit
 	@chmod +x .git/hooks/pre-commit
 	@echo "Pre-commit hook installed"
 
-## Other
-clean: ## Remove generated files
-	@rm -f coverage.out coverage.html
-	@find . -name "*.test" -delete
-	@find . -name "*.prof" -delete
-	@find . -name "*.out" -delete
+check: lint test security ## Run lint, tests, and security scan
+	@echo "All checks passed!"
 
-help: ## Display available commands
-	@echo "pipz Development Commands"
-	@echo ""
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-18s\033[0m %s\n", $$1, $$2}'
+ci: clean check coverage ## Full CI simulation
+	@echo "CI simulation complete!"

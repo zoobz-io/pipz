@@ -1,13 +1,13 @@
 # pipz
 
-[![CI Status](https://github.com/zoobzio/pipz/workflows/CI/badge.svg)](https://github.com/zoobzio/pipz/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/zoobzio/pipz/graph/badge.svg?branch=main)](https://codecov.io/gh/zoobzio/pipz)
-[![Go Report Card](https://goreportcard.com/badge/github.com/zoobzio/pipz)](https://goreportcard.com/report/github.com/zoobzio/pipz)
-[![CodeQL](https://github.com/zoobzio/pipz/workflows/CodeQL/badge.svg)](https://github.com/zoobzio/pipz/security/code-scanning)
-[![Go Reference](https://pkg.go.dev/badge/github.com/zoobzio/pipz.svg)](https://pkg.go.dev/github.com/zoobzio/pipz)
-[![License](https://img.shields.io/github/license/zoobzio/pipz)](LICENSE)
-[![Go Version](https://img.shields.io/github/go-mod/go-version/zoobzio/pipz)](go.mod)
-[![Release](https://img.shields.io/github/v/release/zoobzio/pipz)](https://github.com/zoobzio/pipz/releases)
+[![CI Status](https://github.com/zoobz-io/pipz/workflows/CI/badge.svg)](https://github.com/zoobz-io/pipz/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/zoobz-io/pipz/graph/badge.svg?branch=main)](https://codecov.io/gh/zoobz-io/pipz)
+[![Go Report Card](https://goreportcard.com/badge/github.com/zoobz-io/pipz)](https://goreportcard.com/report/github.com/zoobz-io/pipz)
+[![CodeQL](https://github.com/zoobz-io/pipz/workflows/CodeQL/badge.svg)](https://github.com/zoobz-io/pipz/security/code-scanning)
+[![Go Reference](https://pkg.go.dev/badge/github.com/zoobz-io/pipz.svg)](https://pkg.go.dev/github.com/zoobz-io/pipz)
+[![License](https://img.shields.io/github/license/zoobz-io/pipz)](LICENSE)
+[![Go Version](https://img.shields.io/github/go-mod/go-version/zoobz-io/pipz)](go.mod)
+[![Release](https://img.shields.io/github/v/release/zoobz-io/pipz)](https://github.com/zoobz-io/pipz/releases)
 
 Type-safe, composable data pipelines for Go.
 
@@ -66,7 +66,7 @@ pipeline := pipz.NewCircuitBreaker(BreakerID, protected, 5, 30*time.Second)
 ## Install
 
 ```bash
-go get github.com/zoobzio/pipz
+go get github.com/zoobz-io/pipz
 ```
 
 Requires Go 1.24+.
@@ -83,7 +83,7 @@ import (
     "strings"
     "time"
 
-    "github.com/zoobzio/pipz"
+    "github.com/zoobz-io/pipz"
 )
 
 // Identities for debugging and observability
@@ -146,15 +146,15 @@ func main() {
 | Type-Safe Generics   | Full compile-time checking with zero reflection                                   | [Architecture](docs/2.learn/4.architecture.md)                |
 | Rich Error Context   | Path tracking, timestamps, and input capture on failure                           | [Safety & Reliability](docs/3.guides/6.safety-reliability.md) |
 | Panic Recovery       | Automatic recovery with security-conscious sanitization                           | [Safety & Reliability](docs/3.guides/6.safety-reliability.md) |
-| Signal Observability | State change events via [capitan](https://github.com/zoobzio/capitan) integration | [Hooks](docs/2.learn/5.hooks.md)                              |
+| Signal Observability | State change events via [capitan](https://github.com/zoobz-io/capitan) integration | [Hooks](docs/2.learn/5.hooks.md)                              |
 | Pipeline Schemas     | `Schema()` exports structure for visualization and debugging                      | [Cheatsheet](docs/5.reference/1.cheatsheet.md)                |
 
 ## Why pipz?
 
 - **Type-safe** — Full compile-time checking with generics
 - **Composable** — Complex pipelines from simple parts
-- **Minimal dependencies** — Standard library plus [clockz](https://github.com/zoobzio/clockz)
-- **Observable** — Typed signals for state changes via [capitan](https://github.com/zoobzio/capitan)
+- **Minimal dependencies** — Standard library plus [clockz](https://github.com/zoobz-io/clockz)
+- **Observable** — Typed signals for state changes via [capitan](https://github.com/zoobz-io/capitan)
 - **Rich errors** — Full path tracking shows exactly where failures occur
 - **Panic-safe** — Automatic recovery with security sanitization
 
@@ -180,7 +180,7 @@ reliable := pipz.NewSequence(ReliableID,
 result, err := reliable.Process(ctx, order)
 ```
 
-Every connector emits [capitan](https://github.com/zoobzio/capitan) signals — circuit breaker state changes, retry attempts, rate limit hits — observable without instrumentation code.
+Every connector emits [capitan](https://github.com/zoobz-io/capitan) signals — circuit breaker state changes, retry attempts, rate limit hits — observable without instrumentation code.
 
 ## Extensible Application Vocabulary
 

@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/zoobzio/pipz"
+	"github.com/zoobz-io/pipz"
 )
 
 // TestConfirmedCoverageGaps validates the actual coverage gaps identified by JOEBOY

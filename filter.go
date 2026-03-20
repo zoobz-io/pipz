@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/zoobzio/capitan"
+	"github.com/zoobz-io/capitan"
 )
 
 // Filter creates a conditional processor that either continues the pipeline unchanged

@@ -9,7 +9,7 @@
 //
 // # Installation
 //
-//	go get github.com/zoobzio/pipz
+//	go get github.com/zoobz-io/pipz
 //
 // Requires Go 1.24+ for generic type constraints.
 //
@@ -168,7 +168,7 @@
 //	import (
 //	    "context"
 //	    "strings"
-//	    "github.com/zoobzio/pipz"
+//	    "github.com/zoobz-io/pipz"
 //	)
 //
 //	func main() {

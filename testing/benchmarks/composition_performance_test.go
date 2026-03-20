@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/zoobzio/pipz"
+	"github.com/zoobz-io/pipz"
 )
 
 // ClonableInt is a simple integer type that implements Clone for benchmarking..

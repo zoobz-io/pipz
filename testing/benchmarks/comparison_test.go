@@ -10,7 +10,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/zoobzio/pipz"
+	"github.com/zoobz-io/pipz"
 )
 
 // ProfileUpdate represents a user profile modification - tests basic cloning with simple fields..

@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/zoobzio/capitan"
+	"github.com/zoobz-io/capitan"
 )
 
 // Retry attempts the processor up to maxAttempts times.

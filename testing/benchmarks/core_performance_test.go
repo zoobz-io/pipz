@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/zoobzio/pipz"
-	pipztesting "github.com/zoobzio/pipz/testing"
+	"github.com/zoobz-io/pipz"
+	pipztesting "github.com/zoobz-io/pipz/testing"
 )
 
 // BenchmarkProcessors measures the performance of individual processor types.
