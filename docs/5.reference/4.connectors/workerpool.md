@@ -481,6 +481,6 @@ protected := pipz.NewCircuitBreaker(ProtectedBreakerID,
 ## See Also
 
 - [Concurrent](./concurrent.md) - For unbounded parallel execution
-- [Scaffold](../3.processors/scaffold.md) - For fire-and-forget operations
+- [Scaffold](./scaffold.md) - For fire-and-forget operations
 - [Sequence](./sequence.md) - For sequential execution
 - [RateLimiter](./ratelimiter.md) - For time-based rate limiting

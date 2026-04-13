@@ -496,4 +496,4 @@ slowLogger := pipz.NewHandle(SlowLogID,
 - [Retry](./retry.md) - Often combined with timeout
 - [Fallback](./fallback.md) - For timeout recovery
 - [Race](./race.md) - Alternative approach to timeouts
-- [Handle](../3.processors/handle.md) - For timeout monitoring
+- [Handle](./handle.md) - For timeout monitoring

@@ -424,5 +424,5 @@ transactional := pipz.NewFallback(
 
 - [Race](./race.md) - For trying multiple options in parallel
 - [Retry](./retry.md) - For retrying the same processor
-- [Handle](../3.processors/handle.md) - For custom error handling
+- [Handle](./handle.md) - For custom error handling
 - [Switch](./switch.md) - For conditional routing

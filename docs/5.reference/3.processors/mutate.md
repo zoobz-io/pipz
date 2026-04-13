@@ -271,5 +271,5 @@ rateLimiter := pipz.Mutate(
 ## See Also
 
 - [Transform](./transform.md) - For unconditional transformations
-- [Switch](./switch.md) - For routing to different processors
+- [Switch](../4.connectors/switch.md) - For routing to different processors
 - [Apply](./apply.md) - For conditional operations that can fail

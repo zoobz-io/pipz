@@ -597,4 +597,4 @@ func (cm *CircuitManager) ResetAllCircuits() {
 - [Retry](./retry.md) - Often combined with circuit breakers
 - [Fallback](./fallback.md) - For alternative processors
 - [Timeout](./timeout.md) - For time-based failure detection
-- [Handle](../3.processors/handle.md) - For custom error handling patterns
+- [Handle](./handle.md) - For custom error handling patterns

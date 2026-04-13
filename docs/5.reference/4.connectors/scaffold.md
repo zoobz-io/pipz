@@ -368,5 +368,5 @@ func (n Notification) Clone() Notification {
 ## See Also
 
 - [Concurrent](./concurrent.md) - For parallel operations that wait for completion
-- [Effect](./effect.md) - Common processor for fire-and-forget operations
+- [Effect](../3.processors/effect.md) - Common processor for fire-and-forget operations
 - [Handle](./handle.md) - For error monitoring without blocking
