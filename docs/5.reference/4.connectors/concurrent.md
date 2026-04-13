@@ -515,4 +515,4 @@ func (d Document) Clone() Document {
 
 - [Race](./race.md) - For getting the first successful result
 - [Sequence](./sequence.md) - For sequential execution
-- [Effect](./effect.md) - Common processor for concurrent operations
+- [Effect](../3.processors/effect.md) - Common processor for concurrent operations

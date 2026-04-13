@@ -386,5 +386,5 @@ intelligentRetry := pipz.NewHandle(
 
 - [Fallback](./fallback.md) - For trying different processors
 - [Timeout](./timeout.md) - Often combined with retry
-- [Handle](../3.processors/handle.md) - For custom retry logic
+- [Handle](./handle.md) - For custom retry logic
 - [Race](./race.md) - For parallel attempts

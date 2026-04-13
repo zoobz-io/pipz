@@ -449,5 +449,5 @@ AddRoute("unknown", handleUnknown)
 
 - [Mutate](../3.processors/mutate.md) - For simple conditional processing
 - [Fallback](./fallback.md) - For two-option routing
-- [Handle](../3.processors/handle.md) - Often uses Switch for error routing
+- [Handle](./handle.md) - Often uses Switch for error routing
 - [Concurrent](./concurrent.md) - When all routes should execute
